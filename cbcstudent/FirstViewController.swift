@@ -9,8 +9,16 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    @IBOutlet weak var acesscode: UITextField!
+    @IBOutlet weak var accountname: UITextField!
 
+var name = String()
+    
     override func viewDidLoad() {
+        
+        
+        
+                
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -20,6 +28,11 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func login(_ sender: Any) {
+        if(acesscode.text == "2357"){
+            UserDefaults.setValue(accountname.text, forKey: "aname")
+        }
+    }
 
 }
 

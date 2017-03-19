@@ -1,0 +1,6 @@
+framework module Pods_cbcstudent {
+  umbrella header "Pods-cbcstudent-umbrella.h"
+
+  export *
+  module * { export * }
+}

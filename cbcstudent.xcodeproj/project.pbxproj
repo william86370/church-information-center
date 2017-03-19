@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */; };
+		84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD41E7DFA10007F0DA7 /* newstablecell.swift */; };
+		84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */; };
 		84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */; };
 		84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */; };
 		84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */; };
@@ -15,6 +18,8 @@
 		84B8A7C31E7C0E4200163B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B8A7C11E7C0E4200163B6E /* LaunchScreen.storyboard */; };
 		84B8A7CE1E7C0E4200163B6E /* cbcstudentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7CD1E7C0E4200163B6E /* cbcstudentTests.swift */; };
 		84B8A7D91E7C0E4200163B6E /* cbcstudentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7D81E7C0E4200163B6E /* cbcstudentUITests.swift */; };
+		84B8A7E81E7C1B9900163B6E /* newstablecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7E71E7C1B9900163B6E /* newstablecontroller.swift */; };
+		84F527701E7DD9A300F638B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F5276F1E7DD9A300F638B2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbcstudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent.release.xcconfig"; sourceTree = "<group>"; };
+		731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cbcstudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84515AD41E7DFA10007F0DA7 /* newstablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newstablecell.swift; sourceTree = "<group>"; };
+		84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newsdownloader.swift; sourceTree = "<group>"; };
 		84B8A7B31E7C0E4200163B6E /* cbcstudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cbcstudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,10 @@
 		84B8A7D41E7C0E4200163B6E /* cbcstudentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cbcstudentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8A7D81E7C0E4200163B6E /* cbcstudentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cbcstudentUITests.swift; sourceTree = "<group>"; };
 		84B8A7DA1E7C0E4200163B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cbcstudent.entitlements; sourceTree = "<group>"; };
+		84B8A7E71E7C1B9900163B6E /* newstablecontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newstablecontroller.swift; sourceTree = "<group>"; };
+		84F5276F1E7DD9A300F638B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0CD3E681CF818AB027AB53B /* Pods-cbcstudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbcstudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CD1BE08188A3478B3265352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD3E681CF818AB027AB53B /* Pods-cbcstudent.debug.xcconfig */,
+				1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84B8A7AA1E7C0E4200163B6E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +106,8 @@
 				84B8A7CC1E7C0E4200163B6E /* cbcstudentTests */,
 				84B8A7D71E7C0E4200163B6E /* cbcstudentUITests */,
 				84B8A7B41E7C0E4200163B6E /* Products */,
+				2CD1BE08188A3478B3265352 /* Pods */,
+				9EF9F8071C3B9653C51494DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +124,16 @@
 		84B8A7B51E7C0E4200163B6E /* cbcstudent */ = {
 			isa = PBXGroup;
 			children = (
+				84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */,
 				84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */,
-				84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */,
 				84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */,
 				84B8A7BC1E7C0E4200163B6E /* Main.storyboard */,
+				84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */,
+				84F5276E1E7DD8D600F638B2 /* news table */,
 				84B8A7BF1E7C0E4200163B6E /* Assets.xcassets */,
 				84B8A7C11E7C0E4200163B6E /* LaunchScreen.storyboard */,
 				84B8A7C41E7C0E4200163B6E /* Info.plist */,
+				84F5276F1E7DD9A300F638B2 /* GoogleService-Info.plist */,
 			);
 			path = cbcstudent;
 			sourceTree = "<group>";
@@ -128,6 +156,24 @@
 			path = cbcstudentUITests;
 			sourceTree = "<group>";
 		};
+		84F5276E1E7DD8D600F638B2 /* news table */ = {
+			isa = PBXGroup;
+			children = (
+				84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */,
+				84B8A7E71E7C1B9900163B6E /* newstablecontroller.swift */,
+				84515AD41E7DFA10007F0DA7 /* newstablecell.swift */,
+			);
+			name = "news table";
+			sourceTree = "<group>";
+		};
+		9EF9F8071C3B9653C51494DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B8A7DD1E7C0E4200163B6E /* Build configuration list for PBXNativeTarget "cbcstudent" */;
 			buildPhases = (
+				08ADD83A34F940E02201011C /* [CP] Check Pods Manifest.lock */,
 				84B8A7AF1E7C0E4200163B6E /* Sources */,
 				84B8A7B01E7C0E4200163B6E /* Frameworks */,
 				84B8A7B11E7C0E4200163B6E /* Resources */,
+				343B2F87F94F03289BD69F88 /* [CP] Embed Pods Frameworks */,
+				9298F1BFE195C36485231F56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +247,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2U2K8SJ7Q7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					84B8A7C81E7C0E4200163B6E = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -239,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B8A7C31E7C0E4200163B6E /* LaunchScreen.storyboard in Resources */,
+				84F527701E7DD9A300F638B2 /* GoogleService-Info.plist in Resources */,
 				84B8A7C01E7C0E4200163B6E /* Assets.xcassets in Resources */,
 				84B8A7BE1E7C0E4200163B6E /* Main.storyboard in Resources */,
 			);
@@ -260,14 +315,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08ADD83A34F940E02201011C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		343B2F87F94F03289BD69F88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9298F1BFE195C36485231F56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84B8A7AF1E7C0E4200163B6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */,
+				84B8A7E81E7C1B9900163B6E /* newstablecontroller.swift in Sources */,
 				84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */,
+				84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */,
 				84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */,
+				84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,10 +521,13 @@
 		};
 		84B8A7DE1E7C0E4200163B6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0CD3E681CF818AB027AB53B /* Pods-cbcstudent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,10 +537,13 @@
 		};
 		84B8A7DF1E7C0E4200163B6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,6 +558,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudentTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,6 +574,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudentTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +589,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudentUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudentUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +604,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudentUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arc.cbcstudentUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +632,7 @@
 				84B8A7DF1E7C0E4200163B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84B8A7E01E7C0E4200163B6E /* Build configuration list for PBXNativeTarget "cbcstudentTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +641,7 @@
 				84B8A7E21E7C0E4200163B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84B8A7E31E7C0E4200163B6E /* Build configuration list for PBXNativeTarget "cbcstudentUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +650,7 @@
 				84B8A7E51E7C0E4200163B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
