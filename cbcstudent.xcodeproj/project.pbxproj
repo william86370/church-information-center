@@ -551,7 +551,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0CD3E681CF818AB027AB53B /* Pods-cbcstudent.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudent/Info.plist;
@@ -567,7 +567,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
 				INFOPLIST_FILE = cbcstudent/Info.plist;

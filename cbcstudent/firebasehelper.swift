@@ -46,10 +46,10 @@ class firebasehelper {
   class func addnewstofirebase(title:String,Body:String,url:String,Pictureurl:String){
      var ref: FIRDatabaseReference!
     ref = FIRDatabase.database().reference().child("news").child(title)
-    ref.setValue(["title":title])
-    ref.setValue(["body":Body])
-    ref.setValue(["link":url])
-    ref.setValue(["pic":Pictureurl])
+    ref.child("title").setValue(title)
+    ref.child("body").setValue(body)
+    ref.child("link").setValue(url)
+    ref.child("pic").setValue(Pictureurl)
     }
     class func removenewsdata(title:String){
         var ref: FIRDatabaseReference!
