@@ -10,6 +10,11 @@
 		6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */; };
 		84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD41E7DFA10007F0DA7 /* newstablecell.swift */; };
 		84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */; };
+		84515AD91E7F5502007F0DA7 /* firebasehelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD81E7F5502007F0DA7 /* firebasehelper.swift */; };
+		84515ADD1E7F6E46007F0DA7 /* smallgrouptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */; };
+		84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */; };
+		84515AE21E7F711F007F0DA7 /* admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AE11E7F711F007F0DA7 /* admin.swift */; };
+		84515AE41E7F76A3007F0DA7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */; };
 		84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */; };
 		84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */; };
 		84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */; };
@@ -44,6 +49,11 @@
 		731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cbcstudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84515AD41E7DFA10007F0DA7 /* newstablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newstablecell.swift; sourceTree = "<group>"; };
 		84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newsdownloader.swift; sourceTree = "<group>"; };
+		84515AD81E7F5502007F0DA7 /* firebasehelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firebasehelper.swift; sourceTree = "<group>"; };
+		84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smallgrouptable.swift; sourceTree = "<group>"; };
+		84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smallgroupcell.swift; sourceTree = "<group>"; };
+		84515AE11E7F711F007F0DA7 /* admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = admin.swift; sourceTree = "<group>"; };
+		84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-gyiuqtiexpgsgsblzqkezzypaczo/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		84B8A7B31E7C0E4200163B6E /* cbcstudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cbcstudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84515AE41E7F76A3007F0DA7 /* Kingfisher.framework in Frameworks */,
 				6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +110,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		84515ADE1E7F6E49007F0DA7 /* small group table */ = {
+			isa = PBXGroup;
+			children = (
+				84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */,
+				84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */,
+			);
+			name = "small group table";
+			sourceTree = "<group>";
+		};
 		84B8A7AA1E7C0E4200163B6E = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +145,14 @@
 			isa = PBXGroup;
 			children = (
 				84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */,
+				84515AD81E7F5502007F0DA7 /* firebasehelper.swift */,
+				84515ADE1E7F6E49007F0DA7 /* small group table */,
 				84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */,
 				84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */,
 				84B8A7BC1E7C0E4200163B6E /* Main.storyboard */,
+				84515AE11E7F711F007F0DA7 /* admin.swift */,
 				84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */,
+				84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */,
 				84F5276E1E7DD8D600F638B2 /* news table */,
 				84B8A7BF1E7C0E4200163B6E /* Assets.xcassets */,
 				84B8A7C11E7C0E4200163B6E /* LaunchScreen.storyboard */,
@@ -159,7 +183,6 @@
 		84F5276E1E7DD8D600F638B2 /* news table */ = {
 			isa = PBXGroup;
 			children = (
-				84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */,
 				84B8A7E71E7C1B9900163B6E /* newstablecontroller.swift */,
 				84515AD41E7DFA10007F0DA7 /* newstablecell.swift */,
 			);
@@ -169,6 +192,7 @@
 		9EF9F8071C3B9653C51494DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */,
 				731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */,
 			);
 			name = Frameworks;
@@ -369,11 +393,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */,
+				84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */,
 				84B8A7E81E7C1B9900163B6E /* newstablecontroller.swift in Sources */,
+				84515AE21E7F711F007F0DA7 /* admin.swift in Sources */,
+				84515AD91E7F5502007F0DA7 /* firebasehelper.swift in Sources */,
 				84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */,
 				84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */,
 				84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */,
 				84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */,
+				84515ADD1E7F6E46007F0DA7 /* smallgrouptable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

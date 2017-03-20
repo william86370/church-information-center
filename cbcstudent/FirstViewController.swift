@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     @IBOutlet weak var acesscode: UITextField!
     @IBOutlet weak var accountname: UITextField!
+    @IBOutlet weak var grade: UITextField!
 
 var name = String()
     
@@ -27,12 +28,26 @@ var name = String()
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func login(_ sender: Any) {
+    @IBAction func login(_ sender: UIButton) {
+        
         if(acesscode.text == "2357"){
-            UserDefaults.setValue(accountname.text, forKey: "aname")
+            print(acesscode.text!)
+            print(accountname.text!)
+            print(grade.text!)
+            
+            UserDefaults.standard.setValue(accountname.text, forKey: "aname")
+            UserDefaults.standard.setValue(grade.text, forKey: "agrade")
+            performSegue(withIdentifier: "login", sender: self)
+            
+        }else{
+            let alertController = UIAlertController(title: "whopse", message: "wrong code", preferredStyle: .alert)
+            
+            self.present(alertController, animated: true, completion:nil)
         }
+        
+        
     }
-
+    
+    
 }
 

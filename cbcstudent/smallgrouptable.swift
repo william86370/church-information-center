@@ -1,62 +1,33 @@
 //
-//  newstablecontroller.swift
+//  smallgrouptable.swift
 //  cbcstudent
 //
-//  Created by William Wright on 3/17/17.
+//  Created by William Wright on 3/20/17.
 //  Copyright © 2017 A.R.C software and enggering. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import Kingfisher
-class newstablecontroller: UITableViewController {
-var name = String()
-var grade = String()
-    
-    
-    var count = Int()
-    var newstitles = [String]()
-    
-    
-    
-    var titles = [String]()
-    var bodys = [String]()
-    var links = [String]()
-    var pictures = [String]()
-    
-    
-    
-    
-    
-    
-    let prefs = UserDefaults.standard
-    //set firebase database from file
-    //let ref = FIRDatabase.database().reference(withPath: "news")
-    
-    
-    
-    
-    
+class smallgrouptable: UITableViewController {
+    var smallgroups = [NSDictionary]()
+    var groupnames = [String]()
     override func viewDidLoad() {
-        
-        if prefs.string(forKey: "aname") != nil{
-            
-            name = prefs.string(forKey: "aname")!
-            grade = prefs.string(forKey: "agrade")!
-            
-            print(name)
-            loadfirebase()
-            
-        }else{
-            print("nothingstored")
-            gotologin()
-            
-           
+        let ref = FIRDatabase.database().reference().child("smallgroups")
+        var value =  NSDictionary()
+        //calls firebase useing the ref created earlyer
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            value = (snapshot.value as? NSDictionary)!
+            // firebasehelper.printdir(dir: value)
+            for (key,values) in value {
+                self.smallgroups.append(value[key] as! NSDictionary)
+                self.groupnames.append(key as! String)
+                print(value[key]!)
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
-        
-
-        
-        
 
         super.viewDidLoad()
 
@@ -66,50 +37,6 @@ var grade = String()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    func gotologin(){
-         self.performSegue(withIdentifier: "go", sender: self)
-    }
-    
-    func loadfirebase(){
-        
-        
-        var ref: FIRDatabaseReference!
-        
-        ref = FIRDatabase.database().reference()
-        
-        
-        
-        
-        
-        ref.child("news").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            print("receved snapshot")
-            
-            //let news1 = value?["first"] as? NSDictionary
-            
-            firebasehelper.printdir(dir: value!)
-            
-            for (key,values) in value! {
-                print("\(key) = \(values)")
-                
-                let newtitle = value![key] as? NSDictionary
-                
-                self.titles.append((newtitle!["title"] as? String)!)
-                self.bodys.append((newtitle!["body"] as? String)!)
-                self.links.append((newtitle!["link"] as? String)!)
-                self.pictures.append((newtitle!["pic"] as? String)! )
-                self.count += 1
-                self.newstitles.append(key as! String)
-            }
-            print(self.count)
-            self.tableView.reloadData()
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,35 +45,25 @@ var grade = String()
 
     // MARK: - Table view data source
 
-    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return count
+        return groupnames.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "cell",
-            for: indexPath) as! newstablecell
+            for: indexPath) as! smallgroupcell
         
-        let row = indexPath.row
-        
-        
-        
-        cell.title.text = titles[row]
-        cell.body.text = bodys[row]
-        let url = URL(string: pictures[row])!
-        cell.img.kf.setImage(with: url)
-        
-        
-        print(titles[row])
-        print(bodys[row])
-        print("ran")
-        
+        cell.groupname.text = groupnames[indexPath.row]
         return cell
     }
+
 
     /*
     // Override to support conditional editing of the table view.

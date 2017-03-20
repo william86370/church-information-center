@@ -19,4 +19,5 @@ pod 'Firebase/Storage'
 pod 'Fabric'
 pod 'TwitterKit'
 pod 'FeedKit'
+pod 'Kingfisher', '~> 3.0'
 end
