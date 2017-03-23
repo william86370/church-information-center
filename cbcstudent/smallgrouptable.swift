@@ -9,9 +9,17 @@
 import UIKit
 import Firebase
 class smallgrouptable: UITableViewController {
+    @IBOutlet weak var segment: UISegmentedControl!
+    let name = firebasehelper.retrievedefaults(key: "aname") as? String
+    let grade = firebasehelper.retrievedefaults(key: "agrade") as? String
+    var key = String()
     var smallgroups = [NSDictionary]()
     var groupnames = [String]()
+    var groupsnotin = [String]()
+    var groupmemebers = [String]()
     override func viewDidLoad() {
+        
+        /*
         let ref = FIRDatabase.database().reference().child("smallgroups")
         var value =  NSDictionary()
         //calls firebase useing the ref created earlyer
@@ -20,7 +28,11 @@ class smallgrouptable: UITableViewController {
             value = (snapshot.value as? NSDictionary)!
             // firebasehelper.printdir(dir: value)
             for (key,values) in value {
-                self.smallgroups.append(value[key] as! NSDictionary)
+        firebasehelper.savedefaults(value: value[key]!, key: key as! String)
+                if(firebasehelper.valuexists(valuekey: (key as? String)!)){
+                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
+                }
+            self.smallgroups.append(value[key] as! NSDictionary)
                 self.groupnames.append(key as! String)
                 print(value[key]!)
                 self.tableView.reloadData()
@@ -28,86 +40,152 @@ class smallgrouptable: UITableViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-
+ */
+        
+        
+        refresh(sender: self)
+        self.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    @IBAction func changegroups(_ sender: Any) {
+        //refresh(sender: self)
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    func refresh(sender:AnyObject) {
+         smallgroups = [NSDictionary]()
+         groupnames = [String]()
+        groupsnotin = [String]()
+        let ref = FIRDatabase.database().reference().child("smallgroups")
+        var value =  NSDictionary()
+        //calls firebase useing the ref created earlyer
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            value = (snapshot.value as? NSDictionary)!
+            // firebasehelper.printdir(dir: value)
+            for (key,values) in value {
+                if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
+                    self.groupsnotin.append(key as! String)
+                }
+                firebasehelper.savedefaults(value: value[key]!, key: key as! String)
+                if(firebasehelper.valuexists(valuekey: (key as? String)!)){
+                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
+                }
+                self.smallgroups.append(value[key] as! NSDictionary)
+                self.groupnames.append(key as! String)
+                print(value[key]!)
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+   refreshControl?.endRefreshing()
+        // Code to refresh table view
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if(segment.selectedSegmentIndex == 1){
+            return groupsnotin.count
+        }
         return groupnames.count
     }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "cell",
             for: indexPath) as! smallgroupcell
-        
-        cell.groupname.text = groupnames[indexPath.row]
+        if(segment.selectedSegmentIndex == 1){
+           cell.groupname.text = groupsnotin[indexPath.row]
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        }else{
+            if(groupsnotin.contains(groupnames[indexPath.row])){
+             cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            }else{
+                 cell.accessoryType = UITableViewCellAccessoryType.none
+            }
+            cell.groupname.text = groupnames[indexPath.row]
+        }
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //print the row that the user selects
+        print("Row \(indexPath.row)selected")
+        //change the varubles for the selevted items
+        if(segment.selectedSegmentIndex == 1 ){
+            key = groupsnotin[indexPath.row]
+        }else{
+            if(groupsnotin.contains(groupnames[indexPath.row])){
+                key = groupnames[indexPath.row]
+            }else{
+                //user is not in that group must update table first 
+                alertjoin(groupname: groupnames[indexPath.row])
+                //refreshcompleation(sender: self){
+                 self.key = self.groupnames[indexPath.row]
+               // }
+            }
+        }
+        //go and do the segue
+        performSegue(withIdentifier: "group", sender: self)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "group"){
+            let vc = segue.destination as! ingrouptable
+            vc.key = key
+        }
     }
-    */
+    func alertjoin(groupname:String){
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "your not in this group", message: "join group?", preferredStyle: .alert)
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { [weak alert] (_) in
+            firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!){
+                self.groupsnotin.append(groupname)
+                self.refresh(sender: self)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "no", style: .default, handler: { [weak alert] (_) in
+        }))
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    func refreshcompleation(sender:AnyObject, completion: @escaping() -> Void) {
+        smallgroups = [NSDictionary]()
+        groupnames = [String]()
+        groupsnotin = [String]()
+        let ref = FIRDatabase.database().reference().child("smallgroups")
+        var value =  NSDictionary()
+        //calls firebase useing the ref created earlyer
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            value = (snapshot.value as? NSDictionary)!
+            // firebasehelper.printdir(dir: value)
+            for (key,values) in value {
+                if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
+                    self.groupsnotin.append(key as! String)
+                }
+                firebasehelper.savedefaults(value: value[key]!, key: key as! String)
+                if(firebasehelper.valuexists(valuekey: (key as? String)!)){
+                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
+                }
+                self.smallgroups.append(value[key] as! NSDictionary)
+                self.groupnames.append(key as! String)
+                print(value[key]!)
+                self.tableView.reloadData()
+                completion()
+                
+                
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+            completion()
+        }
+       
+    }
 
 }

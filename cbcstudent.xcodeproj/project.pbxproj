@@ -15,6 +15,10 @@
 		84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */; };
 		84515AE21E7F711F007F0DA7 /* admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AE11E7F711F007F0DA7 /* admin.swift */; };
 		84515AE41E7F76A3007F0DA7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */; };
+		847A5EE51E8007DC0055E872 /* settingstable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE41E8007DC0055E872 /* settingstable.swift */; };
+		847A5EE71E8040170055E872 /* ingrouptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE61E8040170055E872 /* ingrouptable.swift */; };
+		847A5EE91E8042780055E872 /* ingroupcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE81E8042780055E872 /* ingroupcell.swift */; };
+		8497BAD61E80C2700004FB11 /* webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497BAD51E80C2700004FB11 /* webview.swift */; };
 		84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */; };
 		84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */; };
 		84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */; };
@@ -54,6 +58,10 @@
 		84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smallgroupcell.swift; sourceTree = "<group>"; };
 		84515AE11E7F711F007F0DA7 /* admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = admin.swift; sourceTree = "<group>"; };
 		84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-gyiuqtiexpgsgsblzqkezzypaczo/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		847A5EE41E8007DC0055E872 /* settingstable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingstable.swift; sourceTree = "<group>"; };
+		847A5EE61E8040170055E872 /* ingrouptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingrouptable.swift; sourceTree = "<group>"; };
+		847A5EE81E8042780055E872 /* ingroupcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingroupcell.swift; sourceTree = "<group>"; };
+		8497BAD51E80C2700004FB11 /* webview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webview.swift; sourceTree = "<group>"; };
 		84B8A7B31E7C0E4200163B6E /* cbcstudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cbcstudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1090699F1E84234F0083D0DF /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				847A5EE41E8007DC0055E872 /* settingstable.swift */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
 		2CD1BE08188A3478B3265352 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +131,8 @@
 			children = (
 				84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */,
 				84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */,
+				847A5EE61E8040170055E872 /* ingrouptable.swift */,
+				847A5EE81E8042780055E872 /* ingroupcell.swift */,
 			);
 			name = "small group table";
 			sourceTree = "<group>";
@@ -146,6 +164,8 @@
 			children = (
 				84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */,
 				84515AD81E7F5502007F0DA7 /* firebasehelper.swift */,
+				84F5276E1E7DD8D600F638B2 /* news table */,
+				1090699F1E84234F0083D0DF /* settings */,
 				84515ADE1E7F6E49007F0DA7 /* small group table */,
 				84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */,
 				84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */,
@@ -153,7 +173,6 @@
 				84515AE11E7F711F007F0DA7 /* admin.swift */,
 				84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */,
 				84B8A7B81E7C0E4200163B6E /* FirstViewController.swift */,
-				84F5276E1E7DD8D600F638B2 /* news table */,
 				84B8A7BF1E7C0E4200163B6E /* Assets.xcassets */,
 				84B8A7C11E7C0E4200163B6E /* LaunchScreen.storyboard */,
 				84B8A7C41E7C0E4200163B6E /* Info.plist */,
@@ -185,6 +204,7 @@
 			children = (
 				84B8A7E71E7C1B9900163B6E /* newstablecontroller.swift */,
 				84515AD41E7DFA10007F0DA7 /* newstablecell.swift */,
+				8497BAD51E80C2700004FB11 /* webview.swift */,
 			);
 			name = "news table";
 			sourceTree = "<group>";
@@ -393,13 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */,
+				847A5EE51E8007DC0055E872 /* settingstable.swift in Sources */,
 				84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */,
 				84B8A7E81E7C1B9900163B6E /* newstablecontroller.swift in Sources */,
 				84515AE21E7F711F007F0DA7 /* admin.swift in Sources */,
 				84515AD91E7F5502007F0DA7 /* firebasehelper.swift in Sources */,
+				847A5EE91E8042780055E872 /* ingroupcell.swift in Sources */,
 				84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */,
 				84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */,
 				84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */,
+				847A5EE71E8040170055E872 /* ingrouptable.swift in Sources */,
+				8497BAD61E80C2700004FB11 /* webview.swift in Sources */,
 				84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */,
 				84515ADD1E7F6E46007F0DA7 /* smallgrouptable.swift in Sources */,
 			);
@@ -496,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -539,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -551,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0CD3E681CF818AB027AB53B /* Pods-cbcstudent.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
@@ -567,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;

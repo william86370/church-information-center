@@ -2,7 +2,7 @@
 //  admin.swift
 //  cbcstudent
 //
-//  Created by Admin on 3/20/17.
+//  Created by William Wright on 3/20/17.
 //  Copyright © 2017 A.R.C software and enggering. All rights reserved.
 //
 
@@ -23,8 +23,8 @@ class admin: UIViewController {
 
     @IBAction func add(_ sender: Any) {
         
-        if firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!){
-            added.text = "done"
+        firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!){
+            self.added.text = "done"
         }
         
         
