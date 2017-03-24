@@ -20,4 +20,5 @@ pod 'Fabric'
 pod 'TwitterKit'
 pod 'FeedKit'
 pod 'Kingfisher', '~> 3.0'
+pod 'JTMaterialSpinner', '~> 2.0'
 end

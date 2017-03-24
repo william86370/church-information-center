@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import Kingfisher
+import JTMaterialSpinner
 class newstablecontroller: UITableViewController {
     var name = String()
     var grade = String()
@@ -17,6 +18,8 @@ class newstablecontroller: UITableViewController {
     var bodys = [String]()
     var links = [String]()
     var pictures = [String]()
+    var dates = [String]()
+    var selecteddate = String()
     var selectedtitle = String()
     var selectedbody = String()
     var selectedlink = String()
@@ -25,6 +28,7 @@ class newstablecontroller: UITableViewController {
     //set firebase database from file
     //let ref = FIRDatabase.database().reference(withPath: "news")
     override func viewDidLoad() {
+       
         if prefs.string(forKey: "aname") != nil{
             name = prefs.string(forKey: "aname")!
             grade = prefs.string(forKey: "agrade")!
@@ -59,6 +63,7 @@ class newstablecontroller: UITableViewController {
                 self.bodys.append((newtitle!["body"] as? String)!)
                 self.links.append((newtitle!["link"] as? String)!)
                 self.pictures.append((newtitle!["pic"] as? String)! )
+                self.dates.append((newtitle!["date"] as? String)!)
                 self.count += 1
                 self.newstitles.append(key as! String)
             }
@@ -73,29 +78,45 @@ class newstablecontroller: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return count
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return count
+        return 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "cell",
             for: indexPath) as! newstablecell
-        let row = indexPath.row
+        let row = indexPath.section
+      
         cell.title.text = titles[row]
         cell.body.text = bodys[row]
+        let index = links[row].index(links[row].startIndex, offsetBy: 7)
+        
+        cell.datelbl.text = dates[row]
+        cell.linklbl.text = links[row].substring(from: index)
         let url = URL(string: pictures[row])!
-        cell.img.kf.setImage(with: url)
-        return cell
+        cell.img.kf.setImage(with: url, completionHandler: {
+            (image, error, cacheType, imageUrl) in
+            
+        })
+                return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 40
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //print the row that the user selects
-        print("Row \(indexPath.row)selected")
+        print("Row \(indexPath.section)selected")
         //change the varubles for the selevted items
-         selectedtitle = self.titles[indexPath.row]
-        selectedbody = self.bodys[indexPath.row]
-         selectedlink = self.links[indexPath.row]
-         selectedpic = self.pictures[indexPath.row]
+        let row = indexPath.section
+         selectedtitle = self.titles[row]
+        selectedbody = self.bodys[row]
+         selectedlink = self.links[row]
+         selectedpic = self.pictures[row]
+        selecteddate = self.dates[row]
         //go and do the segue
         performSegue(withIdentifier: "news", sender: self)
     }
@@ -106,6 +127,7 @@ class newstablecontroller: UITableViewController {
             vc.body = selectedbody
             vc.pic = selectedpic
             vc.link = selectedlink
+            //vc.date = selecteddate
         }
     }
     func refeash(){
@@ -115,6 +137,7 @@ class newstablecontroller: UITableViewController {
          bodys = [String]()
          links = [String]()
          pictures = [String]()
+        dates = [String]()
         loadfirebase()
         self.refreshControl?.endRefreshing()
     }

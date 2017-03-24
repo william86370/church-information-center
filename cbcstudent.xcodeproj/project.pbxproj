@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		109002B81E84331200D6D5CA /* JTMaterialSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */; };
+		10AF1AD91E84763300130E4C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10AF1AD81E84763300130E4C /* Kingfisher.framework */; };
 		6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */; };
 		84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD41E7DFA10007F0DA7 /* newstablecell.swift */; };
 		84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */; };
@@ -14,7 +16,6 @@
 		84515ADD1E7F6E46007F0DA7 /* smallgrouptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */; };
 		84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */; };
 		84515AE21E7F711F007F0DA7 /* admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AE11E7F711F007F0DA7 /* admin.swift */; };
-		84515AE41E7F76A3007F0DA7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */; };
 		847A5EE51E8007DC0055E872 /* settingstable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE41E8007DC0055E872 /* settingstable.swift */; };
 		847A5EE71E8040170055E872 /* ingrouptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE61E8040170055E872 /* ingrouptable.swift */; };
 		847A5EE91E8042780055E872 /* ingroupcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5EE81E8042780055E872 /* ingroupcell.swift */; };
@@ -49,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTMaterialSpinner.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphonesimulator/JTMaterialSpinner/JTMaterialSpinner.framework"; sourceTree = "<group>"; };
+		10AF1AD41E844A1600130E4C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		10AF1AD61E8466EF00130E4C /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = "Pods/../build/Debug-iphoneos/Material/Material.framework"; sourceTree = "<group>"; };
+		10AF1AD81E84763300130E4C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbcstudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent.release.xcconfig"; sourceTree = "<group>"; };
 		731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cbcstudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84515AD41E7DFA10007F0DA7 /* newstablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newstablecell.swift; sourceTree = "<group>"; };
@@ -87,7 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84515AE41E7F76A3007F0DA7 /* Kingfisher.framework in Frameworks */,
+				10AF1AD91E84763300130E4C /* Kingfisher.framework in Frameworks */,
+				109002B81E84331200D6D5CA /* JTMaterialSpinner.framework in Frameworks */,
 				6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +218,10 @@
 		9EF9F8071C3B9653C51494DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10AF1AD81E84763300130E4C /* Kingfisher.framework */,
+				10AF1AD61E8466EF00130E4C /* Material.framework */,
+				10AF1AD41E844A1600130E4C /* Kingfisher.framework */,
+				109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */,
 				84515AE31E7F76A3007F0DA7 /* Kingfisher.framework */,
 				731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */,
 			);
@@ -579,6 +589,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Material",
+				);
 				INFOPLIST_FILE = cbcstudent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,6 +610,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = cbcstudent/cbcstudent.entitlements;
 				DEVELOPMENT_TEAM = 2U2K8SJ7Q7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Material",
+				);
 				INFOPLIST_FILE = cbcstudent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

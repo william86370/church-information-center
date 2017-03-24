@@ -76,6 +76,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - JTMaterialSpinner (2.0.3)
   - Kingfisher (3.4.0)
   - Protobuf (3.2.0)
   - TwitterCore (2.8.0):
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - Firebase/DynamicLinks
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - JTMaterialSpinner (~> 2.0)
   - Kingfisher (~> 3.0)
   - TwitterKit
 
@@ -116,11 +118,12 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: a8bf4211624999b73e4184be516f94770b139525
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  JTMaterialSpinner: 3c4279fc0b72438c9e29712fd37cf616d20c613e
   Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: f7b0a1adcb800f6446ff0ef70164797376522ff3
 
-PODFILE CHECKSUM: e0b5c3c916875924305568f875cc5fcce27375e7
+PODFILE CHECKSUM: 916cf8be615cd44bb9475cd124b5295d184a65af
 
 COCOAPODS: 1.1.1
