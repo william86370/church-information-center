@@ -22,7 +22,9 @@ class newstablecell: UITableViewCell {
     
     @IBOutlet weak var linklbl: UILabel!
     
+    @IBOutlet weak var likebtn: UIButton!
     
+    @IBOutlet weak var sharebtn: UIButton!
     
    var spinner = JTMaterialSpinner()
     override func awakeFromNib() {
