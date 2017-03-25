@@ -7,21 +7,32 @@
 //
 
 import UIKit
-
+import JTMaterialSpinner
 class smallgroupcell: UITableViewCell {
 
     @IBOutlet weak var groupname: UILabel!
     
+     var spinner = JTMaterialSpinner()
     
+    @IBOutlet weak var numofmembers: UILabel!
+    @IBOutlet weak var leadrsingrouplbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        self.addSubview(spinner)
+        spinner.frame = CGRect(x: 335, y: 34, width: 30, height: 30)
+        
+        spinner.circleLayer.lineWidth = 2.0
+        spinner.circleLayer.strokeColor = UIColor.orange.cgColor
+        
+        spinner.animationDuration = 2
+        spinner.beginRefreshing()
 
-        // Configure the view for the selected state
+       
     }
-
+    
 }
