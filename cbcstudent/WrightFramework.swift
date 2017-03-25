@@ -23,6 +23,24 @@ class WrightFramework {
         }
         return false
     }
+    class func returnleaderingroup(dir:NSDictionary)->String{
+        for (key,values) in dir {
+            let info = dir[key] as? NSDictionary
+            if info?["leader"] as? Bool == true {
+             return ("Leader: " + (info?["name"] as? String)!)
+            }
+        }
+        return ("Leader: None")
+        
+    }
+    class func returnnumberingroup(dir:NSDictionary)->Int{
+        var students = 0
+        for (key,values) in dir {
+            let info = dir[key] as? NSDictionary
+           students = students + 1
+            }
+        return students
+    }
     class func getbtnstate(btn:UIButton)-> UIControlState{
      //@info this class takes in a button and detemrnas what the selected state is
      //@return this class returns the state of the button given 

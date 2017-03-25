@@ -112,7 +112,7 @@ class newstablecontroller: UITableViewController {
         cell.spinner.frame = CGRect(x: 147, y: 84, width: 50 , height: 50)
         
         cell.spinner.circleLayer.lineWidth = 2.0
-        cell.spinner.circleLayer.strokeColor = UIColor.green.cgColor
+        cell.spinner.circleLayer.strokeColor = UIColor.orange.cgColor
         
         cell.spinner.animationDuration = 2
         cell.spinner.beginRefreshing()

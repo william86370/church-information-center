@@ -17,7 +17,8 @@ class smallgrouptable: UITableViewController {
     var smallgroups = [NSDictionary]()
     var groupnames = [String]()
     var groupsnotin = [String]()
-    var groupmemebers = [String]()
+    var groupmemebers = [Int]()
+    var leadersforgroup = [String]()
     override func viewDidLoad() {
         
         /*
@@ -70,6 +71,9 @@ class smallgrouptable: UITableViewController {
                 if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
                     self.groupsnotin.append(key as! String)
                 }
+                self.groupmemebers.append(WrightFramework.returnnumberingroup(dir: value[key] as! NSDictionary))
+                
+                
                 
                 firebasehelper.savedefaults(value: value[key]!, key: key as! String)
                 if(firebasehelper.valuexists(valuekey: (key as? String)!)){
@@ -115,7 +119,7 @@ class smallgrouptable: UITableViewController {
         cell.clipsToBounds = true
         //end
         
-        
+        cell.numofmembers.text = ("\(groupmemebers[row]) Currently in Group")
         if(segment.selectedSegmentIndex == 1){
            cell.groupname.text = groupsnotin[row]
             cell.accessoryType = UITableViewCellAccessoryType.none
