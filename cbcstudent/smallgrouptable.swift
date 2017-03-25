@@ -91,9 +91,9 @@ class smallgrouptable: UITableViewController {
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        if(segment.selectedSegmentIndex == 1){
-            return groupsnotin.count
-        }
+       // if(segment.selectedSegmentIndex == 1){
+         //   return groupsnotin.count
+        //}
         return groupnames.count
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,23 +116,27 @@ class smallgrouptable: UITableViewController {
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
         //end
-        
+        cell.spinner.endRefreshing()
         cell.numofmembers.text = ("\(groupmemebers[row]) Currently in Group")
-        if(segment.selectedSegmentIndex == 1){
-           cell.groupname.text = groupsnotin[row]
-            cell.accessoryType = UITableViewCellAccessoryType.none
-        }else{
+        //if(segment.selectedSegmentIndex == 1){
+          // cell.groupname.text = groupsnotin[row]
+            //cell.accessoryType = UITableViewCellAccessoryType.none
+        //}else{
             if(groupsnotin.contains(groupnames[row])){
              cell.accessoryType = UITableViewCellAccessoryType.checkmark
             }else{
                  cell.accessoryType = UITableViewCellAccessoryType.none
             }
             cell.groupname.text = groupnames[row]
-        }
+    
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.section
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "cell",
+            for: indexPath) as! smallgroupcell
+        cell.spinner.beginRefreshing()
         //print the row that the user selects
         print("Row \(row)selected")
         //change the varubles for the selevted items
@@ -147,6 +151,7 @@ class smallgrouptable: UITableViewController {
                 //refreshcompleation(sender: self){
                  self.key = self.groupnames[row]
                // }
+                self.tableView.reloadData()
             }
             
         }

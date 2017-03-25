@@ -502,20 +502,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="WrI-VN-Khr">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="All Groups"/>
-                                <segment title="Groups your in"/>
-                            </segments>
-                            <connections>
-                                <action selector="changegroups:" destination="7CY-Ax-WJa" eventType="valueChanged" id="jYc-Ym-waI"/>
-                            </connections>
-                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="97" id="tDK-AW-IlV" customClass="smallgroupcell" customModule="cbcstudent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="414" height="97"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tDK-AW-IlV" id="FlV-Ti-Mvl">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -564,7 +553,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="segment" destination="WrI-VN-Khr" id="b1j-a1-Jm7"/>
                         <segue destination="Qpf-Ka-kpj" kind="show" identifier="group" id="ckf-rZ-qQe"/>
                     </connections>
                 </tableViewController>
@@ -630,11 +618,10 @@
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -654,11 +641,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ef4-rD-6LT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="News-50" id="zgk-wy-XSk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f41-pk-zqf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="f41-pk-zqf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -700,10 +686,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qW4-qD-5kU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="groups" image="Conference Call-50" id="4Go-30-6HC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NvN-JB-jvY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="NvN-JB-jvY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -953,6 +938,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JRh-71-8DZ"/>
+        <segue reference="Ic3-5H-yah"/>
     </inferredMetricsTieBreakers>
 </document>

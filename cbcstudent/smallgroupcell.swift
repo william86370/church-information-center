@@ -18,7 +18,6 @@ class smallgroupcell: UITableViewCell {
     @IBOutlet weak var leadrsingrouplbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
