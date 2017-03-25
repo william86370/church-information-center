@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import JTMaterialSpinner
 class smallgrouptable: UITableViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     let name = firebasehelper.retrievedefaults(key: "aname") as? String
@@ -69,6 +70,7 @@ class smallgrouptable: UITableViewController {
                 if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
                     self.groupsnotin.append(key as! String)
                 }
+                
                 firebasehelper.savedefaults(value: value[key]!, key: key as! String)
                 if(firebasehelper.valuexists(valuekey: (key as? String)!)){
                     firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
@@ -87,48 +89,64 @@ class smallgrouptable: UITableViewController {
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if(segment.selectedSegmentIndex == 1){
             return groupsnotin.count
         }
         return groupnames.count
     }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 1
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "cell",
             for: indexPath) as! smallgroupcell
+        let row = indexPath.section
+        
+               
+        
+        
+        //code to make the cell have a border
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 4
+        cell.layer.cornerRadius = 4
+        cell.clipsToBounds = true
+        //end
+        
+        
         if(segment.selectedSegmentIndex == 1){
-           cell.groupname.text = groupsnotin[indexPath.row]
+           cell.groupname.text = groupsnotin[row]
             cell.accessoryType = UITableViewCellAccessoryType.none
         }else{
-            if(groupsnotin.contains(groupnames[indexPath.row])){
+            if(groupsnotin.contains(groupnames[row])){
              cell.accessoryType = UITableViewCellAccessoryType.checkmark
             }else{
                  cell.accessoryType = UITableViewCellAccessoryType.none
             }
-            cell.groupname.text = groupnames[indexPath.row]
+            cell.groupname.text = groupnames[row]
         }
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.section
         //print the row that the user selects
-        print("Row \(indexPath.row)selected")
+        print("Row \(row)selected")
         //change the varubles for the selevted items
         if(segment.selectedSegmentIndex == 1 ){
-            key = groupsnotin[indexPath.row]
+            key = groupsnotin[row]
         }else{
-            if(groupsnotin.contains(groupnames[indexPath.row])){
-                key = groupnames[indexPath.row]
+            if(groupsnotin.contains(groupnames[row])){
+                key = groupnames[row]
             }else{
                 //user is not in that group must update table first 
-                alertjoin(groupname: groupnames[indexPath.row])
+                alertjoin(groupname: groupnames[row])
                 //refreshcompleation(sender: self){
-                 self.key = self.groupnames[indexPath.row]
+                 self.key = self.groupnames[row]
                // }
             }
+            
         }
         //go and do the segue
         performSegue(withIdentifier: "group", sender: self)

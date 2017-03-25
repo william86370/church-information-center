@@ -77,9 +77,8 @@ class ingrouptable: UITableViewController {
         return groupnames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "cell2",
-            for: indexPath) as! ingroupcell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2",for: indexPath) as! ingroupcell
+        let row = indexPath.section
         cell.namelbl.text = groupnames[indexPath.row]
         return cell
     }

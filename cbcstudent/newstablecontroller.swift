@@ -106,6 +106,17 @@ class newstablecontroller: UITableViewController {
         cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
         //end
+        //here we define the spinner for spinning while the photo loads 
+        
+        cell.addSubview(cell.spinner)
+        cell.spinner.frame = CGRect(x: 147, y: 84, width: 50 , height: 50)
+        
+        cell.spinner.circleLayer.lineWidth = 2.0
+        cell.spinner.circleLayer.strokeColor = UIColor.green.cgColor
+        
+        cell.spinner.animationDuration = 2
+        cell.spinner.beginRefreshing()
+
         //here we are seting the values of each cell
         cell.title.text = titles[row]
         cell.body.text = bodys[row]
@@ -118,6 +129,25 @@ class newstablecontroller: UITableViewController {
             (image, error, cacheType, imageUrl) in
             cell.spinner.endRefreshing()
         })
+        //set cell liked status 
+        if (UserDefaults.standard.value(forKey: titles[row] + "like") != nil){
+        cell.likestate = UserDefaults.standard.bool(forKey: titles[row] + "like")
+        if cell.likestate == true{
+            print("cell like true")
+            
+            cell.likebtn.setImage(UIImage(named: "Like Filled-50"), for: UIControlState.normal)
+            cell.likebtn.setImage(UIImage(named: "Like Filled-50"), for: UIControlState.selected)
+        }else{
+            print("cell like false")
+            cell.likebtn.setImage(UIImage(named: "Like-50"), for: UIControlState.normal)
+              cell.likebtn.setImage(UIImage(named: "Like-50"), for: UIControlState.selected)
+        }
+        }else{
+            print("never set so seting to false")
+            cell.likestate = false
+            UserDefaults.standard.set(false, forKey: titles[row] + "like")
+        }
+        print((titles[row] + "like"))
                 return cell
     }
    // override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

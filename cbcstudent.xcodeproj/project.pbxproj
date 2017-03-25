@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106601201E85B74000172B1C /* WrightFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066011F1E85B74000172B1C /* WrightFramework.swift */; };
 		109002B81E84331200D6D5CA /* JTMaterialSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */; };
 		10AF1AD91E84763300130E4C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10AF1AD81E84763300130E4C /* Kingfisher.framework */; };
 		6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1066011F1E85B74000172B1C /* WrightFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrightFramework.swift; sourceTree = "<group>"; };
 		109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTMaterialSpinner.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphonesimulator/JTMaterialSpinner/JTMaterialSpinner.framework"; sourceTree = "<group>"; };
 		10AF1AD41E844A1600130E4C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		10AF1AD61E8466EF00130E4C /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = "Pods/../build/Debug-iphoneos/Material/Material.framework"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */,
 				84515AD81E7F5502007F0DA7 /* firebasehelper.swift */,
+				1066011F1E85B74000172B1C /* WrightFramework.swift */,
 				84F5276E1E7DD8D600F638B2 /* news table */,
 				1090699F1E84234F0083D0DF /* settings */,
 				84515ADE1E7F6E49007F0DA7 /* small group table */,
@@ -430,6 +433,7 @@
 				84515AD91E7F5502007F0DA7 /* firebasehelper.swift in Sources */,
 				847A5EE91E8042780055E872 /* ingroupcell.swift in Sources */,
 				84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */,
+				106601201E85B74000172B1C /* WrightFramework.swift in Sources */,
 				84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */,
 				84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */,
 				847A5EE71E8040170055E872 /* ingrouptable.swift in Sources */,
