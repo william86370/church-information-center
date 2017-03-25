@@ -31,7 +31,10 @@ class WrightFramework {
             }
         }
         return ("Leader: None")
-        
+    }
+    class func removefromgroup(group:String,name:String){
+       var ref = FIRDatabase.database().reference().child("smallgroups").child(group).child(name)
+        ref.removeValue()
     }
     class func returnnumberingroup(dir:NSDictionary)->Int{
         var students = 0

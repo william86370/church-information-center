@@ -14,6 +14,7 @@ class admin: UIViewController {
     @IBOutlet weak var groupname: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var grade: UITextField!
+    let leader = firebasehelper.retrievedefaults(key: "aleader") as? Bool
     override func viewDidLoad() {
        
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class admin: UIViewController {
 
     @IBAction func add(_ sender: Any) {
         
-        firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!){
+        firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!,leader:leader!){
             self.added.text = "done"
         }
         

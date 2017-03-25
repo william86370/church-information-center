@@ -29,6 +29,7 @@ var leader = Bool()
     @IBAction func leaderswitch(_ sender: Any) {
         //this runs when the user deauthents themselfs diaableing admin
         if(leadersh.isOn == false){
+            firebasehelper.savedefaults(value: false, key: "aleader")
             UserDefaults.standard.set(nil, forKey: "leader")
             self.leadersh.setOn(false, animated: true)
             self.leader = false
@@ -47,6 +48,8 @@ var leader = Bool()
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             if(textField?.text == "2357"){
                 UserDefaults.standard.set(true, forKey: "leader")
+                //set the globalleader on here
+                 firebasehelper.savedefaults(value: true, key: "aleader")
                 self.leadersh.setOn(true, animated: true)
                 self.leader = true
                 self.tableView.reloadData()

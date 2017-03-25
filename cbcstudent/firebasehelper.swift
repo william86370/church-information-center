@@ -98,10 +98,11 @@ class firebasehelper {
         ref.setValue([data:""])
         return true
     }
-    class func addtosmallgroup(groupname:String, name:String,grade:String, completion: @escaping() -> Void) {
+    class func addtosmallgroup(groupname:String, name:String,grade:String,leader:Bool, completion: @escaping() -> Void) {
        let ref = FIRDatabase.database().reference().child("smallgroups").child(groupname).child(name)
         ref.child("name").setValue(name)
         ref.child("grade").setValue(grade)
+        ref.child("leader").setValue(leader)
     }
   class func addnewstofirebase(title:String,Body:String,url:String,Pictureurl:String){
      var ref: FIRDatabaseReference!

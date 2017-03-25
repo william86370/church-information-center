@@ -10,6 +10,7 @@ import Firebase
 class ingrouptable: UITableViewController {
     let name = firebasehelper.retrievedefaults(key: "aname") as? String
     let grade = firebasehelper.retrievedefaults(key: "agrade") as? String
+    let leader = firebasehelper.retrievedefaults(key: "aleader") as? Bool
     var groupnames = [String]()
     var key = "group1"
     var groupdir = NSDictionary()
@@ -60,7 +61,7 @@ class ingrouptable: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
 */
-        firebasehelper.addtosmallgroup(groupname: key, name: name!, grade: grade!){
+        firebasehelper.addtosmallgroup(groupname: key, name: name!, grade: grade!,leader: leader!){
             self.refresh(sender: self)
         }
     }

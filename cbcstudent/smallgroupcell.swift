@@ -28,7 +28,7 @@ class smallgroupcell: UITableViewCell {
         spinner.frame = CGRect(x: 335, y: 34, width: 30, height: 30)
         
         spinner.circleLayer.lineWidth = 2.0
-        spinner.circleLayer.strokeColor = UIColor.green.cgColor
+        spinner.circleLayer.strokeColor = UIColor.orange.cgColor
         
         spinner.animationDuration = 2
         spinner.beginRefreshing()

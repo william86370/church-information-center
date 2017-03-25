@@ -13,6 +13,7 @@ class smallgrouptable: UITableViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     let name = firebasehelper.retrievedefaults(key: "aname") as? String
     let grade = firebasehelper.retrievedefaults(key: "agrade") as? String
+    let leader = firebasehelper.retrievedefaults(key: "aleader") as? Bool
     var key = String()
     var smallgroups = [NSDictionary]()
     var groupnames = [String]()
@@ -72,9 +73,6 @@ class smallgrouptable: UITableViewController {
                     self.groupsnotin.append(key as! String)
                 }
                 self.groupmemebers.append(WrightFramework.returnnumberingroup(dir: value[key] as! NSDictionary))
-                
-                
-                
                 firebasehelper.savedefaults(value: value[key]!, key: key as! String)
                 if(firebasehelper.valuexists(valuekey: (key as? String)!)){
                     firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
@@ -166,7 +164,7 @@ class smallgrouptable: UITableViewController {
         let alert = UIAlertController(title: "your not in this group", message: "join group?", preferredStyle: .alert)
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { [weak alert] (_) in
-            firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!){
+            firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!,leader:self.leader!){
                 self.groupsnotin.append(groupname)
                 self.refresh(sender: self)
             }

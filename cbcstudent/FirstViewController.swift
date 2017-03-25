@@ -50,6 +50,7 @@ var name = String()
             
             UserDefaults.standard.setValue(accountname.text, forKey: "aname")
             UserDefaults.standard.setValue(grade.text, forKey: "agrade")
+            UserDefaults.standard.set(false, forKey: "aleader")
             performSegue(withIdentifier: "login", sender: self)
             
         }else{
