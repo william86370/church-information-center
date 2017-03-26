@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import JTMaterialSpinner
-class smallgrouptable: UITableViewController {
+class smallgrouptable: UITableViewController{
     @IBOutlet weak var segment: UISegmentedControl!
     let name = firebasehelper.retrievedefaults(key: "aname") as? String
     let grade = firebasehelper.retrievedefaults(key: "agrade") as? String
@@ -20,6 +20,12 @@ class smallgrouptable: UITableViewController {
     var groupsnotin = [String]()
     var groupmemebers = [Int]()
     var leadersforgroup = [String]()
+    var deletepath: NSIndexPath? = nil
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         
         /*
@@ -140,9 +146,8 @@ class smallgrouptable: UITableViewController {
         //print the row that the user selects
         print("Row \(row)selected")
         //change the varubles for the selevted items
-        if(segment.selectedSegmentIndex == 1 ){
-            key = groupsnotin[row]
-        }else{
+
+        
             if(groupsnotin.contains(groupnames[row])){
                 key = groupnames[row]
             }else{
@@ -150,11 +155,11 @@ class smallgrouptable: UITableViewController {
                 alertjoin(groupname: groupnames[row])
                 //refreshcompleation(sender: self){
                  self.key = self.groupnames[row]
-               // }
+               }
                 self.tableView.reloadData()
-            }
             
-        }
+            
+    
         //go and do the segue
         performSegue(withIdentifier: "group", sender: self)
     }
@@ -211,6 +216,48 @@ class smallgrouptable: UITableViewController {
             completion()
         }
        
+    }
+    // Delete Confirmation and Handling
+    func confirmDelete(planet: String) {
+        let alert = UIAlertController(title: "Leave Group", message: "are you sure you want to leave \(planet)?", preferredStyle: .actionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeletePlanet)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeletePlanet)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        // Support presentation in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+       // alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func handleDeletePlanet(alertAction: UIAlertAction!) -> Void {
+        if let indexPath = deletepath {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "cell",
+                for: indexPath as IndexPath) as! smallgroupcell
+           // self.tableView.beginUpdates()
+            
+           groupsnotin.remove(at: indexPath.section)
+           print(groupsnotin)
+            deletepath = nil
+            print("randeleatemethof")
+            self.tableView.reloadData()
+           
+        }
+    }
+    func cancelDeletePlanet(alertAction: UIAlertAction!) {
+         deletepath = nil
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            deletepath = indexPath as NSIndexPath?
+            confirmDelete(planet: groupsnotin[indexPath.section])
+        
+        }
     }
 
 }
