@@ -9,6 +9,8 @@
 import UIKit
 import JTMaterialSpinner
 class smallgroupcell: UITableViewCell {
+    
+    
 
     @IBOutlet weak var groupname: UILabel!
     

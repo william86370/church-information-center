@@ -5,7 +5,6 @@
 //  Created by William Wright on 3/20/17.
 //  Copyright © 2017 A.R.C software and enggering. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import JTMaterialSpinner
@@ -21,38 +20,9 @@ class smallgrouptable: UITableViewController{
     var groupmemebers = [Int]()
     var leadersforgroup = [String]()
     var deletepath: NSIndexPath? = nil
-    
-    
-    
-    
-    
+    var currentcelltitle = String()
     override func viewDidLoad() {
-        
-        /*
-        let ref = FIRDatabase.database().reference().child("smallgroups")
-        var value =  NSDictionary()
-        //calls firebase useing the ref created earlyer
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            value = (snapshot.value as? NSDictionary)!
-            // firebasehelper.printdir(dir: value)
-            for (key,values) in value {
-        firebasehelper.savedefaults(value: value[key]!, key: key as! String)
-                if(firebasehelper.valuexists(valuekey: (key as? String)!)){
-                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
-                }
-            self.smallgroups.append(value[key] as! NSDictionary)
-                self.groupnames.append(key as! String)
-                print(value[key]!)
-                self.tableView.reloadData()
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
- */
-        
-        
-        refresh(sender: self)
+            refresh(sender: self)
         self.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
         super.viewDidLoad()
     }
@@ -77,15 +47,16 @@ class smallgrouptable: UITableViewController{
             for (key,values) in value {
                 if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
                     self.groupsnotin.append(key as! String)
+                    print(self.groupsnotin)
                 }
                 self.groupmemebers.append(WrightFramework.returnnumberingroup(dir: value[key] as! NSDictionary))
                 firebasehelper.savedefaults(value: value[key]!, key: key as! String)
                 if(firebasehelper.valuexists(valuekey: (key as? String)!)){
-                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
+                   // firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
                 }
                 self.smallgroups.append(value[key] as! NSDictionary)
                 self.groupnames.append(key as! String)
-                print(value[key]!)
+                //print(value[key]!)
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
             }
@@ -111,10 +82,6 @@ class smallgrouptable: UITableViewController{
             withIdentifier: "cell",
             for: indexPath) as! smallgroupcell
         let row = indexPath.section
-        
-               
-        
-        
         //code to make the cell have a border
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -128,13 +95,14 @@ class smallgrouptable: UITableViewController{
           // cell.groupname.text = groupsnotin[row]
             //cell.accessoryType = UITableViewCellAccessoryType.none
         //}else{
-            if(groupsnotin.contains(groupnames[row])){
+            if(groupsnotin.contains(groupnames[row] as String)){
+                print(groupnames[row] + "contains " )
              cell.accessoryType = UITableViewCellAccessoryType.checkmark
             }else{
                  cell.accessoryType = UITableViewCellAccessoryType.none
             }
             cell.groupname.text = groupnames[row]
-    
+        print(cell.groupname.text)
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -146,8 +114,6 @@ class smallgrouptable: UITableViewController{
         //print the row that the user selects
         print("Row \(row)selected")
         //change the varubles for the selevted items
-
-        
             if(groupsnotin.contains(groupnames[row])){
                 key = groupnames[row]
             }else{
@@ -157,10 +123,6 @@ class smallgrouptable: UITableViewController{
                  self.key = self.groupnames[row]
                }
                 self.tableView.reloadData()
-            
-            
-    
-        //go and do the segue
         performSegue(withIdentifier: "group", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -176,7 +138,7 @@ class smallgrouptable: UITableViewController{
         alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { [weak alert] (_) in
             firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!,leader:self.leader!){
                 self.groupsnotin.append(groupname)
-                self.refresh(sender: self)
+                self.tableView.reloadData()
             }
         }))
         alert.addAction(UIAlertAction(title: "no", style: .default, handler: { [weak alert] (_) in
@@ -198,55 +160,42 @@ class smallgrouptable: UITableViewController{
             for (key,values) in value {
                 if (firebasehelper.containsstiring(dir: value[key] as! NSDictionary, key2: self.name!)){
                     self.groupsnotin.append(key as! String)
+                    print(self.groupsnotin)
+                    print("groupin=" + (value[key]! as! String))
                 }
                 firebasehelper.savedefaults(value: value[key]!, key: key as! String)
                 if(firebasehelper.valuexists(valuekey: (key as? String)!)){
-                    firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
+                   // firebasehelper.printdir(dir: firebasehelper.retrevefirebasedir(valuekey: key as! String))
                 }
                 self.smallgroups.append(value[key] as! NSDictionary)
                 self.groupnames.append(key as! String)
-                print(value[key]!)
                 self.tableView.reloadData()
                 completion()
-                
-                
             }
         }) { (error) in
             print(error.localizedDescription)
             completion()
         }
-       
     }
     // Delete Confirmation and Handling
     func confirmDelete(planet: String) {
+        currentcelltitle = planet
         let alert = UIAlertController(title: "Leave Group", message: "are you sure you want to leave \(planet)?", preferredStyle: .actionSheet)
-        
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeletePlanet)
         let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeletePlanet)
-        
         alert.addAction(DeleteAction)
         alert.addAction(CancelAction)
-        
-        // Support presentation in iPad
         alert.popoverPresentationController?.sourceView = self.view
-       // alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-        
         self.present(alert, animated: true, completion: nil)
     }
-    
     func handleDeletePlanet(alertAction: UIAlertAction!) -> Void {
         if let indexPath = deletepath {
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "cell",
-                for: indexPath as IndexPath) as! smallgroupcell
-           // self.tableView.beginUpdates()
-            
            groupsnotin.remove(at: indexPath.section)
+            firebasehelper.removefromfirebase(title: currentcelltitle, name: name!)
            print(groupsnotin)
             deletepath = nil
             print("randeleatemethof")
             self.tableView.reloadData()
-           
         }
     }
     func cancelDeletePlanet(alertAction: UIAlertAction!) {
@@ -254,10 +203,13 @@ class smallgrouptable: UITableViewController{
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete){
+            print("ran.delte")
             deletepath = indexPath as NSIndexPath?
-            confirmDelete(planet: groupsnotin[indexPath.section])
-        
+            if (groupsnotin.index(of: groupnames[indexPath.section] ) != nil){
+            let loc = groupsnotin.index(of: groupnames[indexPath.section])
+            print(groupnames[indexPath.section])
+            confirmDelete(planet: groupsnotin[loc!] )
+            }
         }
     }
-
 }

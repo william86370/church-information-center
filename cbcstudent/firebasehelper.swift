@@ -21,6 +21,10 @@ class firebasehelper {
             print(error.localizedDescription)
         }
         }
+    class func removefromfirebase(title:String,name:String){
+       let ref = FIRDatabase.database().reference().child("smallgroups").child(title).child(name)
+        ref.removeValue()
+    }
     func Logout(completionHandler:@escaping (Bool) -> ()) {
                 completionHandler(true)
             }
@@ -45,7 +49,7 @@ class firebasehelper {
         for (key,values) in dir {
            let info = dir[key] as? NSDictionary
             if info?["name"] as? String == key2 {
-                print("here is indoname" + (info?["name"] as? String)!)
+                //print("here is indoname" + (info?["name"] as? String)!)
                 return true
             }
         }
