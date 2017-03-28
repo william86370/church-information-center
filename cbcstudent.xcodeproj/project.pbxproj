@@ -10,6 +10,9 @@
 		106601201E85B74000172B1C /* WrightFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066011F1E85B74000172B1C /* WrightFramework.swift */; };
 		109002B81E84331200D6D5CA /* JTMaterialSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109002B71E84331200D6D5CA /* JTMaterialSpinner.framework */; };
 		10AF1AD91E84763300130E4C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10AF1AD81E84763300130E4C /* Kingfisher.framework */; };
+		10D313C71E8953F100CCD546 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D313C61E8953F100CCD546 /* TextFieldEffects.framework */; };
+		10D313CB1E89DA2600CCD546 /* UserSettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D313CA1E89DA2600CCD546 /* UserSettingsTable.swift */; };
+		10D313CD1E8A090700CCD546 /* notusertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D313CC1E8A090700CCD546 /* notusertable.swift */; };
 		6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */; };
 		84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD41E7DFA10007F0DA7 /* newstablecell.swift */; };
 		84515AD71E7DFE5E007F0DA7 /* newsdownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84515AD61E7DFE5E007F0DA7 /* newsdownloader.swift */; };
@@ -56,6 +59,9 @@
 		10AF1AD41E844A1600130E4C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		10AF1AD61E8466EF00130E4C /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = "Pods/../build/Debug-iphoneos/Material/Material.framework"; sourceTree = "<group>"; };
 		10AF1AD81E84763300130E4C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		10D313C61E8953F100CCD546 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = "../../../Developer/Xcode/DerivedData/cbcstudent-bjuvjtnszajyvygghaxljmrpkver/Build/Products/Debug-iphonesimulator/TextFieldEffects/TextFieldEffects.framework"; sourceTree = "<group>"; };
+		10D313CA1E89DA2600CCD546 /* UserSettingsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsTable.swift; sourceTree = "<group>"; };
+		10D313CC1E8A090700CCD546 /* notusertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notusertable.swift; sourceTree = "<group>"; };
 		1443311928AFE8A2DC9B5AD1 /* Pods-cbcstudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cbcstudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-cbcstudent/Pods-cbcstudent.release.xcconfig"; sourceTree = "<group>"; };
 		731A8CE511B185BB57F0364E /* Pods_cbcstudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cbcstudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84515AD41E7DFA10007F0DA7 /* newstablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newstablecell.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D313C71E8953F100CCD546 /* TextFieldEffects.framework in Frameworks */,
 				10AF1AD91E84763300130E4C /* Kingfisher.framework in Frameworks */,
 				109002B81E84331200D6D5CA /* JTMaterialSpinner.framework in Frameworks */,
 				6701265D9C4702D082EFDB1E /* Pods_cbcstudent.framework in Frameworks */,
@@ -125,6 +132,25 @@
 			name = settings;
 			sourceTree = "<group>";
 		};
+		10D313C81E89D6CC00CCD546 /* usertable */ = {
+			isa = PBXGroup;
+			children = (
+				10D313C91E89D9F100CCD546 /* usersettings */,
+				847A5EE81E8042780055E872 /* ingroupcell.swift */,
+				847A5EE61E8040170055E872 /* ingrouptable.swift */,
+				10D313CC1E8A090700CCD546 /* notusertable.swift */,
+			);
+			name = usertable;
+			sourceTree = "<group>";
+		};
+		10D313C91E89D9F100CCD546 /* usersettings */ = {
+			isa = PBXGroup;
+			children = (
+				10D313CA1E89DA2600CCD546 /* UserSettingsTable.swift */,
+			);
+			name = usersettings;
+			sourceTree = "<group>";
+		};
 		2CD1BE08188A3478B3265352 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +165,7 @@
 			children = (
 				84515ADC1E7F6E46007F0DA7 /* smallgrouptable.swift */,
 				84515ADF1E7F6EEA007F0DA7 /* smallgroupcell.swift */,
-				847A5EE61E8040170055E872 /* ingrouptable.swift */,
-				847A5EE81E8042780055E872 /* ingroupcell.swift */,
+				10D313C81E89D6CC00CCD546 /* usertable */,
 			);
 			name = "small group table";
 			sourceTree = "<group>";
@@ -173,10 +198,10 @@
 				84B8A7E61E7C0E5C00163B6E /* cbcstudent.entitlements */,
 				84515AD81E7F5502007F0DA7 /* firebasehelper.swift */,
 				1066011F1E85B74000172B1C /* WrightFramework.swift */,
+				84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */,
 				84F5276E1E7DD8D600F638B2 /* news table */,
 				1090699F1E84234F0083D0DF /* settings */,
 				84515ADE1E7F6E49007F0DA7 /* small group table */,
-				84B8A7B61E7C0E4200163B6E /* AppDelegate.swift */,
 				84B8A7BA1E7C0E4200163B6E /* SecondViewController.swift */,
 				84B8A7BC1E7C0E4200163B6E /* Main.storyboard */,
 				84515AE11E7F711F007F0DA7 /* admin.swift */,
@@ -221,6 +246,7 @@
 		9EF9F8071C3B9653C51494DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10D313C61E8953F100CCD546 /* TextFieldEffects.framework */,
 				10AF1AD81E84763300130E4C /* Kingfisher.framework */,
 				10AF1AD61E8466EF00130E4C /* Material.framework */,
 				10AF1AD41E844A1600130E4C /* Kingfisher.framework */,
@@ -425,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D313CD1E8A090700CCD546 /* notusertable.swift in Sources */,
 				84B8A7BB1E7C0E4200163B6E /* SecondViewController.swift in Sources */,
 				847A5EE51E8007DC0055E872 /* settingstable.swift in Sources */,
 				84515AE01E7F6EEA007F0DA7 /* smallgroupcell.swift in Sources */,
@@ -435,6 +462,7 @@
 				84B8A7B71E7C0E4200163B6E /* AppDelegate.swift in Sources */,
 				106601201E85B74000172B1C /* WrightFramework.swift in Sources */,
 				84515AD51E7DFA10007F0DA7 /* newstablecell.swift in Sources */,
+				10D313CB1E89DA2600CCD546 /* UserSettingsTable.swift in Sources */,
 				84B8A7B91E7C0E4200163B6E /* FirstViewController.swift in Sources */,
 				847A5EE71E8040170055E872 /* ingrouptable.swift in Sources */,
 				8497BAD61E80C2700004FB11 /* webview.swift in Sources */,

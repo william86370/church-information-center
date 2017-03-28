@@ -54,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -82,6 +87,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5A8178DC7712DF1660AD4627B110326C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6D5CEDECD3D8DC52EA507E0431BDA8A0</key>
 		<dict>
 			<key>primary</key>
@@ -92,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8493CAD23AC1BE61DE53922280EF40C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94DBBFE4594549A057802ABFF2CFC4B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

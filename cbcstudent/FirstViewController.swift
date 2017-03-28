@@ -18,29 +18,13 @@ var name = String()
     override func viewDidLoad() {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
-        
-        
-        
-                
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
     @IBAction func login(_ sender: UIButton) {
         
         if(acesscode.text == "2357"){
@@ -51,6 +35,8 @@ var name = String()
             UserDefaults.standard.setValue(accountname.text, forKey: "aname")
             UserDefaults.standard.setValue(grade.text, forKey: "agrade")
             UserDefaults.standard.set(false, forKey: "aleader")
+            UserDefaults.standard.set(false, forKey: "ashareprayr")
+            UserDefaults.standard.set(false, forKey: "ashareverse")
             performSegue(withIdentifier: "login", sender: self)
             
         }else{

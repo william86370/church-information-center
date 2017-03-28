@@ -18,4 +18,5 @@ pod 'Firebase/RemoteConfig'
 pod 'Firebase/Storage'
 pod 'Kingfisher', '~> 3.0'
 pod 'JTMaterialSpinner', '~> 2.0'
+pod "TextFieldEffects"
 end

@@ -32,9 +32,10 @@ class smallgroupcell: UITableViewCell {
         spinner.circleLayer.strokeColor = UIColor.orange.cgColor
         
         spinner.animationDuration = 2
-        spinner.beginRefreshing()
+       // spinner.beginRefreshing()
 
        
     }
+    
     
 }

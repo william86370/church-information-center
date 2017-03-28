@@ -10,10 +10,17 @@ import Firebase
 import JTMaterialSpinner
 class smallgrouptable: UITableViewController{
     @IBOutlet weak var segment: UISegmentedControl!
+    
+    @IBOutlet weak var leaderadd: UIBarButtonItem!
+    
+    
     let name = firebasehelper.retrievedefaults(key: "aname") as? String
     let grade = firebasehelper.retrievedefaults(key: "agrade") as? String
     let leader = firebasehelper.retrievedefaults(key: "aleader") as? Bool
+    let shareprayr = firebasehelper.retrievedefaults(key: "ashareprayr") as? Bool
+    let shareverse = firebasehelper.retrievedefaults(key: "ashareverse") as? Bool
     var key = String()
+    
     var smallgroups = [NSDictionary]()
     var groupnames = [String]()
     var groupsnotin = [String]()
@@ -21,7 +28,14 @@ class smallgrouptable: UITableViewController{
     var leadersforgroup = [String]()
     var deletepath: NSIndexPath? = nil
     var currentcelltitle = String()
+    
     override func viewDidLoad() {
+        if(leader)!{
+             leaderadd.accessibilityElementsHidden = false
+        }else{
+             leaderadd.accessibilityElementsHidden = true
+        }
+        leaderadd.accessibilityElementsHidden = true
             refresh(sender: self)
         self.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
         super.viewDidLoad()
@@ -89,6 +103,7 @@ class smallgrouptable: UITableViewController{
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
         //end
+        cell.leadrsingrouplbl.text = ("Leaders: " + firebasehelper.returnleader(dir:smallgroups[row]))
         cell.spinner.endRefreshing()
         cell.numofmembers.text = ("\(groupmemebers[row]) Currently in Group")
         //if(segment.selectedSegmentIndex == 1){
@@ -131,12 +146,13 @@ class smallgrouptable: UITableViewController{
             vc.key = key
         }
     }
+    
     func alertjoin(groupname:String){
         //1. Create the alert controller.
         let alert = UIAlertController(title: "your not in this group", message: "join group?", preferredStyle: .alert)
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { [weak alert] (_) in
-            firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!,leader:self.leader!){
+            firebasehelper.addtosmallgroup(groupname: groupname, name: self.name!, grade: self.grade!,leader:self.leader!,shareprayr: self.shareprayr!,shareverse: self.shareverse!){
                 self.groupsnotin.append(groupname)
                 self.tableView.reloadData()
             }
@@ -190,7 +206,7 @@ class smallgrouptable: UITableViewController{
     }
     func handleDeletePlanet(alertAction: UIAlertAction!) -> Void {
         if let indexPath = deletepath {
-           groupsnotin.remove(at: indexPath.section)
+           groupsnotin.remove(at: groupsnotin.index(of: groupnames[indexPath.section])!)
             firebasehelper.removefromfirebase(title: currentcelltitle, name: name!)
            print(groupsnotin)
             deletepath = nil

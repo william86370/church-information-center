@@ -45,6 +45,32 @@ class firebasehelper {
         let val = value[key]
         return val as! String
     }
+    //return if the user is a student or a leader
+    class func returnstatus(dir:NSDictionary)-> String{
+        var leadernames = "Role: Student"
+        for (key,values) in dir {
+            let info = dir[key] as? NSDictionary
+            if info?["leader"] as? Bool == true {
+            leadernames = "Role: Leader"
+            }
+        }
+        return leadernames
+    }
+    class func returnleader(dir:NSDictionary)-> String{
+        var leadernames = "none"
+        for (key,values) in dir {
+            let info = dir[key] as? NSDictionary
+            if info?["leader"] as? Bool == true {
+                if leadernames == "none" {
+                    leadernames = ""
+                    leadernames = (leadernames + (info?["name"] as? String)!)
+                }else{
+                    leadernames = (leadernames + ", " + (info?["name"] as? String)!)
+                }
+            }
+        }
+        return leadernames
+    }
     class func containsstiring(dir:NSDictionary,key2:String)-> Bool{
         for (key,values) in dir {
            let info = dir[key] as? NSDictionary
@@ -91,22 +117,18 @@ class firebasehelper {
         }
         return false
     }
-    class func createnewgroup(groupname:String)-> Bool {
-        if addtofirebase(ref: FIRDatabase.database().reference().child("smallgroups"), data: groupname) {
-         return true
-        }else{
-            return false
-        }
-    }
     class func addtofirebase(ref:FIRDatabaseReference ,data:String)-> Bool{
         ref.setValue([data:""])
         return true
     }
-    class func addtosmallgroup(groupname:String, name:String,grade:String,leader:Bool, completion: @escaping() -> Void) {
+    class func addtosmallgroup(groupname:String, name:String,grade:String,leader:Bool,shareprayr:Bool,shareverse:Bool,completion: @escaping() -> Void) {
        let ref = FIRDatabase.database().reference().child("smallgroups").child(groupname).child(name)
         ref.child("name").setValue(name)
         ref.child("grade").setValue(grade)
         ref.child("leader").setValue(leader)
+        ref.child("shareprayr").setValue(shareprayr)
+        ref.child("shareverse").setValue(shareverse)
+        completion()
     }
   class func addnewstofirebase(title:String,Body:String,url:String,Pictureurl:String){
      var ref: FIRDatabaseReference!

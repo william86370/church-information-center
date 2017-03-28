@@ -24,7 +24,7 @@ class admin: UIViewController {
 
     @IBAction func add(_ sender: Any) {
         
-        firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!,leader:leader!){
+        firebasehelper.addtosmallgroup(groupname: groupname.text!, name: name.text!, grade: grade.text!,leader:leader!,shareprayr: false,shareverse: false){
             self.added.text = "done"
         }
         
